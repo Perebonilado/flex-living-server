@@ -7,7 +7,6 @@ const axiosInstance = axios.create({
 
 axiosInstance.interceptors.request.use((config: InternalAxiosRequestConfig) => {
   if (
-    process.env.NODE_ENV !== 'production' &&
     config.url?.includes('/api/reviews/hostaway')
   ) {
     // override the adapter directly on config
